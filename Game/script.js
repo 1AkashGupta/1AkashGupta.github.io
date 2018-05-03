@@ -114,7 +114,16 @@ function drawLives() {
 	ctx.fillStyle = "#0095DD";
 	ctx.fillText("Lives: "+lives, canvas.width-65, 20);
 }
-
+function goLeft() {
+	if(paddleX > 0) {
+		paddleX -= 30;
+	}
+}
+function goRight() {
+	if(paddleX < canvas.width-paddleWidth) {
+		paddleX += 30;
+	}
+}
 function draw() {
 	ctx.clearRect(0,0, canvas.width, canvas.height);
 	drawBricks()
@@ -159,13 +168,13 @@ function draw() {
 	requestAnimationFrame(draw);
 }
 
-document.addEventListener("mousemove", mouseMoveHandler);
+//document.addEventListener("mousemove", mouseMoveHandler);
 
-function mouseMoveHandler(e) {
+/*function mouseMoveHandler(e) {
 	var relativeX = e.clientX - canvas.offsetLeft;
 	if(relativeX > 0+paddleWidth/2 && relativeX < canvas.width-paddleWidth/2) {
 		paddleX = relativeX - paddleWidth/2;
 	}
-}
+}*/
 
 draw();

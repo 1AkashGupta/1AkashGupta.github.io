@@ -1,6 +1,8 @@
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 
+
+
 setInterval(draw, 10);
 var x = canvas.width/2;
 var y = canvas.height-30;
@@ -15,6 +17,13 @@ var leftPressed = false;
 
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
+function goLeft(){
+	var btn1 = document.createElement("Button");
+	var t1 = document.createTextNode("Left");
+	btn1.appendChild(t);
+	document.body.appendChild(btn);
+}
+
 function keyDownHandler(e) {
 	if(e.keyCode == 39){
 		rightPressed = true;
